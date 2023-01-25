@@ -1,4 +1,3 @@
-import Readme from "../components/Readme";
 import CalendarApp from "./CalendarApp";
 
 function App() {
