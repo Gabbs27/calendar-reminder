@@ -1,0 +1,144 @@
+@import "../../styles/_colors.scss";
+@import "./../../styles/sizes";
+
+.table-container {
+	@media screen and (min-width: $medium-queries) {
+		table-layout: fixed;
+		width: 95vw;
+		height: 80vh;
+	}
+
+	@media screen and (max-width: $medium-queries) {
+		table-layout: auto;
+		overflow-x: auto;
+		height: auto;
+
+		td,
+		th {
+			width: 50%;
+			text-align: left;
+			float: right;
+		}
+
+		th {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	width: 80vw;
+	height: 50vh;
+	border: 2px solid $dark_gray;
+
+	.day-span {
+		font-weight: bold;
+	}
+
+	thead.calendar-thead {
+		background-color: $blue;
+	}
+
+	tr > th.week-day {
+		padding: 0.5rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: $white;
+	}
+
+	td.calendar-day {
+		border: 2px solid $border-gray;
+		padding: 0.25rem;
+		text-align: left;
+		vertical-align: baseline;
+		width: 300px;
+
+		&:hover {
+			background-color: $border-gray;
+		}
+	}
+
+	td.today {
+		background-color: $light_green;
+
+		&:hover {
+			background-color: $light_green;
+			opacity: 0.7;
+		}
+	}
+
+	td.empty {
+		border: 2px solid $border-gray;
+		padding: 0.25rem;
+		background-color: $light_gray;
+		color: $blue;
+		font-weight: bold;
+
+		&:hover {
+			cursor: default;
+			background-color: $light_gray;
+		}
+	}
+}
+
+.button-container {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	margin-bottom: 2em;
+
+	@media screen and (min-width: $medium-queries) {
+		justify-content: flex-end;
+	}
+}
+
+.reminder-container {
+	padding: 0.5rem;
+	margin: 0.75rem 1rem;
+	border-radius: 8px;
+	overflow-x: auto;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	.title-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.weather-container {
+		margin-top: 0.25rem;
+		margin-bottom: 1rem;
+	}
+
+	p.cut-text-overflow {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		width: auto;
+		height: 1.2em;
+		white-space: nowrap;
+
+		@media screen and (max-width: $medium-queries) {
+			width: 100px;
+		}
+	}
+
+	p.reminder-title {
+		color: $white;
+		margin: 0;
+		padding-bottom: 0.25rem;
+		font-size: $fs-large;
+		font-weight: 600;
+	}
+
+	span.reminder-description {
+		padding-right: 0.25rem;
+		font-size: $fs-base;
+		color: $white;
+	}
+
+	:is(p, span).yellow-case {
+		color: $dark_gray;
+	}
+}
