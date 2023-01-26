@@ -2,7 +2,7 @@
   "name": "calendar-reminder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Gabbs27.github.io",
+  "homepage": "./",
   "dependencies": {
     "@react-md/icon": "^5.1.3",
     "@reduxjs/toolkit": "^1.9.1",
