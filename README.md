@@ -6,12 +6,17 @@ rehecho para que el clima sirva de algo, en el mismo repositorio que el original
 
 ## Los dos sitios
 
+Los dos viven en el mismo sitio, con dos pestañas en la cabecera del producto:
+
 | | Dónde | Qué es |
 |---|---|---|
 | Producto | <https://agenda-con-clima.vercel.app> | Este código |
-| Reto de 2023 | <https://calendar-reminder-2023.vercel.app> | Los 12 archivos publicados el 27 de enero de 2023, sin recompilar |
+| Reto de 2023 | <https://agenda-con-clima.vercel.app/calendar-reminder/> | Los 12 archivos publicados el 27 de enero de 2023, sin recompilar |
 
-La dirección vieja, `gabbs27.github.io/calendar-reminder`, redirige al producto.
+Esa subcarpeta no es un capricho: el `index.html` de 2023 pide su JS y su CSS a
+`/calendar-reminder/static/…`, con ruta absoluta, así que es la única ruta donde funciona
+sin tocarlo. Desde él no hay enlace de vuelta, por lo mismo. La dirección vieja,
+`gabbs27.github.io/calendar-reminder`, redirige al producto.
 
 **El de 2023 se publica con sus fallos.** Arreglarlo lo convertiría en otra cosa, y tampoco
 se recompila desde su código: un build nuevo de hoy no es el artefacto que se entregó. El tag
@@ -78,8 +83,10 @@ bueno. Un test que solo se ha visto pasar no prueba nada.
   lugar y fecha, con caché).
 - `src/componentes/` — calendario, formulario, buscador de lugar, clima del recordatorio y
   panel del día.
-- `scripts/publicar-2023.sh` — reconstruye el sitio de 2023 desde su tag y comprueba, archivo
-  por archivo, que es idéntico al que se publicó.
+- `public/calendar-reminder/` — el sitio de 2023, tal cual. Lo pone ahí
+  `scripts/publicar-2023.sh` desde el tag, y `scripts/sitio-2023.test.ts` comprueba en cada
+  corrida de los tests que sigue siendo idéntico, archivo por archivo. Va versionado porque
+  Vercel construye desde un clon sin tags.
 
 Vite, React 19, TypeScript, Vitest y Testing Library.
 
