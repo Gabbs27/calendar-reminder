@@ -1,0 +1,128 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panel__cabecera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.panel__titulo {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.panel__titulo::first-letter {
+  text-transform: uppercase;
+}
+
+.panel__cerrar {
+  border: 0;
+  border-radius: 0.4rem;
+  background: none;
+  color: var(--texto-tenue);
+  font-size: 1.35rem;
+  line-height: 1;
+  padding: 0 0.35rem;
+  cursor: pointer;
+}
+
+.panel__cerrar:hover {
+  background: var(--fondo-hover);
+  color: var(--texto);
+}
+
+.panel__vacio {
+  margin: 0;
+  color: var(--texto-tenue);
+  font-size: 0.9rem;
+}
+
+.panel__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tarjeta {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--color-etiqueta, var(--acento));
+  border-radius: 0.6rem;
+  background: var(--fondo);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tarjeta--verde {
+  --color-etiqueta: #1f9d55;
+}
+.tarjeta--azul {
+  --color-etiqueta: #2b6cb0;
+}
+.tarjeta--ambar {
+  --color-etiqueta: #b7791f;
+}
+.tarjeta--rosa {
+  --color-etiqueta: #b83280;
+}
+.tarjeta--gris {
+  --color-etiqueta: #4a5568;
+}
+
+.tarjeta__linea {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.tarjeta__hora {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  color: var(--texto-tenue);
+}
+
+.tarjeta__texto {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta__acciones {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.tarjeta__acciones button {
+  border: 0;
+  border-radius: 0.35rem;
+  background: none;
+  color: var(--texto-tenue);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.35rem;
+  cursor: pointer;
+}
+
+.tarjeta__acciones button:hover {
+  background: var(--fondo-hover);
+  color: var(--texto);
+}
+
+.tarjeta__lugar {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--texto-tenue);
+}
+
+.panel__nuevo {
+  align-self: flex-start;
+}
