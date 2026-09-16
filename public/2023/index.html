@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es-DO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>El reto de 2023 · Agenda con clima</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --fondo: #ffffff;
+        --fondo-elevado: #f7f8fa;
+        --fondo-hover: #eef0f4;
+        --borde: #dfe2e8;
+        --texto: #1b1f24;
+        --texto-tenue: #667085;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fondo: #14171c;
+          --fondo-elevado: #1a1e25;
+          --fondo-hover: #222833;
+          --borde: #2a3038;
+          --texto: #e6e8ec;
+          --texto-tenue: #9aa4b2;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        background: var(--fondo-elevado);
+        color: var(--texto);
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        line-height: 1.5;
+      }
+
+      .barra {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 0.6rem 1rem;
+        border-bottom: 1px solid var(--borde);
+      }
+
+      .barra__texto {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.35;
+      }
+
+      .barra__titulo {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .barra__nota {
+        color: var(--texto-tenue);
+        font-size: 0.8rem;
+      }
+
+      .versiones {
+        display: flex;
+        gap: 0.2rem;
+        padding: 0.2rem;
+        border: 1px solid var(--borde);
+        border-radius: 0.6rem;
+        background: var(--fondo-elevado);
+      }
+
+      .version {
+        padding: 0.35rem 0.8rem;
+        border-radius: 0.45rem;
+        color: var(--texto-tenue);
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .version:hover {
+        color: var(--texto);
+        background: var(--fondo-hover);
+      }
+
+      .version[aria-current='page'] {
+        background: var(--fondo);
+        color: var(--texto);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+      }
+
+      .marco {
+        flex: 1;
+        width: 100%;
+        border: 0;
+        background: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- El reto de 2023 se sirve tal cual en /calendar-reminder/. Esta página no lo copia
+         ni lo modifica: lo enmarca para que se pueda volver, porque ponerle un enlace
+         dentro sería cambiar lo que se entregó. -->
+    <header class="barra">
+      <span class="barra__texto">
+        <span class="barra__titulo">El reto de enero de 2023</span>
+        <span class="barra__nota">
+          Tal como se entregó: con sus fallos y sin recompilar. Su clima no funciona, y así se queda.
+        </span>
+      </span>
+      <nav class="versiones" aria-label="Versiones">
+        <a class="version" href="/">Ahora</a>
+        <a class="version" href="/2023/" aria-current="page">2023</a>
+      </nav>
+    </header>
+
+    <iframe
+      class="marco"
+      src="/calendar-reminder/"
+      title="El reto de React de Jobsity, enero de 2023"></iframe>
+  </body>
+</html>

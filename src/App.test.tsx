@@ -87,8 +87,18 @@ describe('App', () => {
 
   it('enlaza el reto de 2023, que vive en el mismo sitio', () => {
     pintar();
-    expect(screen.getByRole('link', { name: '2023' })).toHaveAttribute('href', '/calendar-reminder/');
+    expect(screen.getByRole('link', { name: '2023' })).toHaveAttribute('href', '/2023/');
     expect(screen.getByRole('link', { name: 'Ahora' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('el pie dice dónde se guardan los recordatorios y de dónde sale el clima', () => {
+    pintar();
+    const pie = screen.getByRole('contentinfo');
+    expect(pie).toHaveTextContent(/solo en este navegador/i);
+    expect(within(pie).getByRole('link', { name: 'Open-Meteo' })).toHaveAttribute(
+      'href',
+      'https://open-meteo.com/'
+    );
   });
 
   it('si lo guardado no se puede leer, lo dice y no lo sobrescribe', async () => {

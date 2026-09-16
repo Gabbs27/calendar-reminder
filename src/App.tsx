@@ -57,13 +57,14 @@ export default function App({ storage, hoy, nuevoId, buscar, pedirClima }: Props
           <p className="app__subtitulo">Recordatorios con el pronóstico de su día y de su lugar.</p>
         </div>
 
-        {/* El reto de 2023 vive en este mismo sitio, bajo /calendar-reminder/, servido tal
-            como se entregó. Desde allí no hay vuelta: ponerle un enlace sería cambiarlo. */}
+        {/* El reto de 2023 se sirve tal cual en /calendar-reminder/. La pestaña lleva a
+            /2023, que lo enmarca con esta misma barra: la vuelta vive fuera de él, porque
+            ponerle un enlace dentro sería cambiar lo que se entregó. */}
         <nav className="app__versiones" aria-label="Versiones">
           <a className="app__version" href="/" aria-current="page">
             Ahora
           </a>
-          <a className="app__version" href="/calendar-reminder/">
+          <a className="app__version" href="/2023/">
             2023
           </a>
         </nav>
@@ -116,6 +117,31 @@ export default function App({ storage, hoy, nuevoId, buscar, pedirClima }: Props
           </aside>
         )}
       </main>
+
+      <footer className="app__pie">
+        <p>
+          Los recordatorios se guardan solo en este navegador, sin cuentas ni servidor. El clima lo
+          da{' '}
+          <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">
+            Open-Meteo
+          </a>
+          .
+        </p>
+        <p>
+          <a href="/2023/">El reto de 2023</a>
+          <span aria-hidden="true"> · </span>
+          <a
+            href="https://github.com/Gabbs27/calendar-reminder"
+            target="_blank"
+            rel="noopener noreferrer">
+            Código
+          </a>
+          <span aria-hidden="true"> · </span>
+          <a href="https://codewithgabo.com" target="_blank" rel="noopener noreferrer">
+            codewithgabo.com
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

@@ -66,6 +66,33 @@
   font-size: 0.9rem;
 }
 
+.app__pie {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borde);
+  color: var(--texto-tenue);
+  font-size: 0.8rem;
+}
+
+.app__pie p {
+  margin: 0;
+}
+
+.app__pie a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.app__pie a:hover {
+  color: var(--texto);
+}
+
 .app__contenido {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
