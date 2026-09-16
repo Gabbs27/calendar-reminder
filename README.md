@@ -6,16 +6,18 @@ rehecho para que el clima sirva de algo, en el mismo repositorio que el original
 
 ## Los dos sitios
 
-Los dos viven en el mismo sitio, con dos pestañas en la cabecera del producto:
+Los dos viven en el mismo sitio, con dos pestañas para pasar de uno a otro:
 
 | | Dónde | Qué es |
 |---|---|---|
 | Producto | <https://agenda-con-clima.vercel.app> | Este código |
-| Reto de 2023 | <https://agenda-con-clima.vercel.app/calendar-reminder/> | Los 12 archivos publicados el 27 de enero de 2023, sin recompilar |
+| Reto de 2023 | <https://agenda-con-clima.vercel.app/2023/> | El reto enmarcado, con la barra para volver |
+| El artefacto crudo | <https://agenda-con-clima.vercel.app/calendar-reminder/> | Los 12 archivos publicados el 27 de enero de 2023, sin recompilar |
 
 Esa subcarpeta no es un capricho: el `index.html` de 2023 pide su JS y su CSS a
 `/calendar-reminder/static/…`, con ruta absoluta, así que es la única ruta donde funciona
-sin tocarlo. Desde él no hay enlace de vuelta, por lo mismo. La dirección vieja,
+sin tocarlo. Y por eso mismo la vuelta vive fuera de él: `/2023/` lo **enmarca** en lugar de
+modificarlo, porque meterle un enlace sería cambiar lo que se entregó. La dirección vieja,
 `gabbs27.github.io/calendar-reminder`, redirige al producto.
 
 **El de 2023 se publica con sus fallos.** Arreglarlo lo convertiría en otra cosa, y tampoco
