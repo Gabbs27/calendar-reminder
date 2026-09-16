@@ -8,8 +8,10 @@ rehecho para que el clima sirva de algo, en el mismo repositorio que el original
 
 | | Dónde | Qué es |
 |---|---|---|
-| Producto | pendiente de desplegar | Este código |
-| Reto de 2023 | <https://gabbs27.github.io/calendar-reminder/> | Los 12 archivos publicados el 27 de enero de 2023, sin recompilar |
+| Producto | <https://agenda-con-clima.vercel.app> | Este código |
+| Reto de 2023 | <https://calendar-reminder-2023.vercel.app> | Los 12 archivos publicados el 27 de enero de 2023, sin recompilar |
+
+La dirección vieja, `gabbs27.github.io/calendar-reminder`, redirige al producto.
 
 **El de 2023 se publica con sus fallos.** Arreglarlo lo convertiría en otra cosa, y tampoco
 se recompila desde su código: un build nuevo de hoy no es el artefacto que se entregó. El tag
