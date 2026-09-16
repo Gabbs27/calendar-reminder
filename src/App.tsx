@@ -52,8 +52,21 @@ export default function App({ storage, hoy, nuevoId, buscar, pedirClima }: Props
   return (
     <div className="app">
       <header className="app__cabecera">
-        <h1 className="app__titulo">Agenda con clima</h1>
-        <p className="app__subtitulo">Recordatorios con el pronóstico de su día y de su lugar.</p>
+        <div>
+          <h1 className="app__titulo">Agenda con clima</h1>
+          <p className="app__subtitulo">Recordatorios con el pronóstico de su día y de su lugar.</p>
+        </div>
+
+        {/* El reto de 2023 vive en este mismo sitio, bajo /calendar-reminder/, servido tal
+            como se entregó. Desde allí no hay vuelta: ponerle un enlace sería cambiarlo. */}
+        <nav className="app__versiones" aria-label="Versiones">
+          <a className="app__version" href="/" aria-current="page">
+            Ahora
+          </a>
+          <a className="app__version" href="/calendar-reminder/">
+            2023
+          </a>
+        </nav>
       </header>
 
       {agenda.corrupto && (

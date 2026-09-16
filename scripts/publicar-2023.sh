@@ -8,8 +8,14 @@
 # Its index.html loads JS and CSS from /calendar-reminder/static/..., an absolute
 # path, so the files are served under /calendar-reminder/ and / redirects there.
 #
-#   bash scripts/publicar-2023.sh <carpeta>                   # extrae y verifica
+#   bash scripts/publicar-2023.sh public                      # lo pone dentro del producto
 #   SOLO_VERIFICAR=1 bash scripts/publicar-2023.sh <carpeta>  # verifica lo que ya hay
+#   CON_REDIRECCION=1 bash scripts/publicar-2023.sh <carpeta> # además, sitio aparte: / redirige
+#
+# El destino normal es `public/`, que Vite copia tal cual al build: así los dos sitios
+# viven en el mismo dominio y el de 2023 queda en /calendar-reminder/, que es justo la
+# ruta que su index.html pide. Los archivos van versionados porque Vercel construye
+# desde un clon sin tags: aquí no se pueden extraer en tiempo de build.
 set -euo pipefail
 
 BUILD=v2023-jobsity-build
@@ -39,12 +45,14 @@ if [ "$n" -ne "$ESPERADOS" ]; then
   exit 1
 fi
 
-cat > "$DEST/vercel.json" <<'JSON'
+if [ -n "${CON_REDIRECCION:-}" ]; then
+  cat > "$DEST/vercel.json" <<'JSON'
 {
   "redirects": [
     { "source": "/", "destination": "/calendar-reminder/", "permanent": false }
   ]
 }
 JSON
+fi
 
 echo "$n archivos idénticos al build de 2023 en $DEST"
