@@ -1,0 +1,234 @@
+.calendario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.calendario__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.calendario__mes {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.calendario__mes::first-letter {
+  text-transform: uppercase;
+}
+
+.calendario__controles {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.calendario__controles button {
+  min-width: 2.5rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--borde);
+  border-radius: 0.5rem;
+  background: var(--fondo-elevado);
+  color: inherit;
+  font: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.calendario__controles button:hover {
+  background: var(--fondo-hover);
+}
+
+.calendario__cuadricula {
+  border: 1px solid var(--borde);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--borde);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.calendario__semana {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+}
+
+.calendario__nombre-dia {
+  padding: 0.5rem 0.25rem;
+  background: var(--fondo-elevado);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-tenue);
+}
+
+.calendario__celda {
+  min-height: 6.5rem;
+  padding: 0.35rem;
+  background: var(--fondo);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.calendario__celda:hover {
+  background: var(--fondo-hover);
+}
+
+.calendario__celda:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: -2px;
+}
+
+.calendario__celda--vacia {
+  background: var(--fondo-tenue);
+  cursor: default;
+}
+
+.calendario__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto-tenue);
+}
+
+.calendario__celda--hoy .calendario__numero {
+  background: var(--acento);
+  color: var(--acento-texto);
+  font-weight: 600;
+}
+
+.calendario__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.etiqueta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0.2rem 0.4rem;
+  border: 0;
+  border-left: 3px solid var(--color-etiqueta, var(--acento));
+  border-radius: 0.3rem;
+  background: var(--color-etiqueta-fondo, var(--fondo-hover));
+  color: inherit;
+  font: inherit;
+  font-size: 0.78rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.etiqueta:hover {
+  filter: brightness(0.97);
+}
+
+.etiqueta__hora {
+  font-variant-numeric: tabular-nums;
+  color: var(--texto-tenue);
+  font-size: 0.72rem;
+}
+
+.etiqueta__texto {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.etiqueta--verde {
+  --color-etiqueta: #1f9d55;
+  --color-etiqueta-fondo: #e6f6ec;
+}
+.etiqueta--azul {
+  --color-etiqueta: #2b6cb0;
+  --color-etiqueta-fondo: #e6eff9;
+}
+.etiqueta--ambar {
+  --color-etiqueta: #b7791f;
+  --color-etiqueta-fondo: #fbf1e0;
+}
+.etiqueta--rosa {
+  --color-etiqueta: #b83280;
+  --color-etiqueta-fondo: #fbe8f3;
+}
+.etiqueta--gris {
+  --color-etiqueta: #4a5568;
+  --color-etiqueta-fondo: #ecedf0;
+}
+
+.calendario__mas {
+  align-self: flex-start;
+  padding: 0.1rem 0.3rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background: none;
+  color: var(--texto-tenue);
+  font: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.calendario__mas:hover {
+  color: var(--texto);
+  background: var(--fondo-hover);
+}
+
+@media (max-width: 640px) {
+  .calendario__celda {
+    min-height: 4.5rem;
+    padding: 0.2rem;
+  }
+
+  .calendario__numero {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .etiqueta {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.25rem;
+  }
+
+  .etiqueta__hora {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .etiqueta--verde {
+    --color-etiqueta-fondo: #16301f;
+  }
+  .etiqueta--azul {
+    --color-etiqueta-fondo: #152538;
+  }
+  .etiqueta--ambar {
+    --color-etiqueta-fondo: #2f2513;
+  }
+  .etiqueta--rosa {
+    --color-etiqueta-fondo: #2f1526;
+  }
+  .etiqueta--gris {
+    --color-etiqueta-fondo: #23262c;
+  }
+}
