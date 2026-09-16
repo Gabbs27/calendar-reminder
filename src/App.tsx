@@ -63,7 +63,7 @@ export default function App({ storage, hoy, nuevoId, buscar, pedirClima }: Props
         </p>
       )}
 
-      <main className="app__contenido">
+      <main className={`app__contenido${dia ? ' app__contenido--con-panel' : ''}`}>
         <Calendario
           recordatorios={agenda.recordatorios}
           hoy={diaDeHoy}

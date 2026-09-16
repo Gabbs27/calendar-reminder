@@ -50,7 +50,9 @@
 }
 
 @media (min-width: 60rem) {
-  .app__contenido {
+  /* La columna del panel solo se reserva cuando hay un día abierto: si no, el
+     calendario se quedaba con dos tercios del ancho y el resto en blanco. */
+  .app__contenido--con-panel {
     grid-template-columns: minmax(0, 1fr) 22rem;
   }
 
